@@ -1,0 +1,17 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  h2 {
+    text-align: center;
+    color: #6f9eaf;
+  }
+  button {
+    margin-top: 2rem;
+  }
+}
+img {
+  width: 5rem;
+  height: auto;
+  margin: 1rem auto;
+}

@@ -1,0 +1,22 @@
+<div>
+  <form [formGroup]="form" class="flex">
+    <h2>Add Route</h2>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Departure</mat-label>
+      <input type="text" matInput formControlName="departure" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Destination</mat-label>
+      <input type="text" matInput formControlName="destination" />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="envoyer()"
+      [disabled]="!form.valid"
+    >
+      Add
+    </button>
+  </form>
+</div>

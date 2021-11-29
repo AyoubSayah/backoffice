@@ -1,0 +1,35 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div class="flex">
+      <img src="assets/logo.png" alt="" />
+      <span> Wassalni</span>
+    </div>
+    <div class="card">
+      <img src="assets/download.png" alt="" />
+      <p class="profile">
+        <strong> Super Admin</strong>
+        <br />
+      </p>
+    </div>
+    <mat-list>
+      <mat-list-item routerLink="/admin/users" routerLinkActive="active"
+        ><mat-icon matListIcon>view_list</mat-icon> Users
+      </mat-list-item>
+      <mat-list-item routerLink="/admin/routes" routerLinkActive="active"
+        ><mat-icon matListIcon>filter_list</mat-icon> Routes
+      </mat-list-item>
+    </mat-list></mat-drawer
+  >
+  <mat-drawer-content>
+    <mat-toolbar>
+      <div class="toolbar">
+        <!-- <mat-icon>notifications</mat-icon> -->
+        <mat-icon [matMenuTriggerFor]="menu" class="person">person</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Logout</button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

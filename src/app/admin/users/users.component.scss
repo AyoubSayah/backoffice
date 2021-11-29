@@ -1,0 +1,131 @@
+mat-drawer {
+  height: 100vh;
+  width: 240px;
+  mat-list-item {
+    color: #637381;
+    &:hover {
+      // background-color: rgb(98 110 212 / 16%) !important;
+      color: #6f9eaf;
+    }
+    &:first-child {
+      // background-color: rgb(98 110 212 / 16%) !important;
+      color: #6f9eaf;
+      border-right: 5px solid #6f9eaf;
+    }
+  }
+  mat-icon {
+    color: #0c6a8c;
+    margin-right: 1rem;
+  }
+  .poll {
+    color: #0c6a8c !important;
+  }
+}
+mat-toolbar {
+  background-color: white;
+}
+.toolbar {
+  margin-left: auto;
+  mat-icon {
+    color: #03a9f4;
+    margin: 1rem;
+  }
+}
+.cards {
+  justify-content: center;
+  display: flex;
+}
+table {
+  width: calc(100% - 150px);
+  margin: auto;
+  margin-bottom: 4rem;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+mat-card {
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  margin: 2rem;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  flex-grow: 1;
+  line-height: 1.5rem;
+  mat-icon {
+    color: #0c6a8c;
+    width: 5rem;
+    height: 5rem;
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.flex {
+  margin-bottom: 2rem;
+  height: 4rem;
+  width: 100%;
+  background-color: #6f9eaf;
+  color: white;
+  align-items: center;
+  font-weight: 500;
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.card {
+  background-color: #f2f3f5;
+  padding: 1rem;
+  display: flex;
+  margin: 1rem;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  img {
+    width: 3rem;
+    border-radius: 3rem;
+    height: 3rem;
+    object-fit: cover;
+  }
+}
+.profile {
+  color: #697886;
+  line-height: 1.6rem;
+  margin-top: 0.8rem;
+  margin-left: 0.5rem;
+}
+.profile strong {
+  color: black;
+  font-weight: 500;
+}
+
+.rupture {
+  color: #f44336 !important;
+}
+.plus {
+  color: #6f9eaf;
+  font-size: 3rem;
+  margin-left: 6rem;
+  margin-bottom: 3rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+.image {
+  color: #626ed4;
+}
+.fab {
+  background-color: #80bed5;
+  margin-right: 0.5rem;
+}
+.delete {
+  background: #f44336;
+}

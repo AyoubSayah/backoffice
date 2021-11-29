@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@include mat-core();
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+input[type="file"] {
+  display: none;
+}
+
+.label {
+  background-color: #626ed4;
+  color: white;
+  padding: 0.3rem 1rem;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+.flex {
+  display: flex;
+}
+
+@import "~@angular/material/theming";
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-blue-grey, 500);
+$my-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+@include angular-material-theme($my-app-theme);

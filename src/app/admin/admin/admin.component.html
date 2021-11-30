@@ -16,7 +16,7 @@
         ><mat-icon matListIcon>view_list</mat-icon> Users
       </mat-list-item>
       <mat-list-item routerLink="/admin/routes" routerLinkActive="active"
-        ><mat-icon matListIcon>filter_list</mat-icon> Routes
+        ><mat-icon matListIcon>filter_list</mat-icon> Roads
       </mat-list-item>
     </mat-list></mat-drawer
   >
@@ -26,7 +26,7 @@
         <!-- <mat-icon>notifications</mat-icon> -->
         <mat-icon [matMenuTriggerFor]="menu" class="person">person</mat-icon>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>Logout</button>
+          <button mat-menu-item (click)="logout()">Logout</button>
         </mat-menu>
       </div>
     </mat-toolbar>

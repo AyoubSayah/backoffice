@@ -1,0 +1,45 @@
+.flex {
+  .side1 {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    .flex {
+      background-color: #6f9eaf;
+      align-items: center;
+      width: 100%;
+      height: 5rem;
+      justify-content: center;
+      margin-bottom: 5rem;
+      img {
+        width: 4rem;
+        height: 4rem;
+        margin-right: 1rem;
+      }
+      span {
+        font-size: 1rem;
+        font-weight: 500;
+        color: white;
+      }
+    }
+    h2 {
+      color: #6f9eaf;
+    }
+    p {
+      color: #9e9e9e;
+    }
+    mat-form-field {
+      width: 300px;
+    }
+    button {
+      font-size: 1rem;
+      padding: 0.5rem 3rem;
+    }
+  }
+  .side2 {
+    width: calc(100% - 400px);
+    object-fit: cover;
+    height: 100vh;
+  }
+}

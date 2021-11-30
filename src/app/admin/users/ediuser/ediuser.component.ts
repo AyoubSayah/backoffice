@@ -1,39 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { iif } from 'rxjs';
+import {
+  MatDialogRef,
+  MatDialog,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { UserService } from 'src/app/apis/user.service';
 import { NotificationComponent } from 'src/app/shared/notification/notification.component';
 
 @Component({
-  selector: 'app-adduser',
-  templateUrl: './adduser.component.html',
-  styleUrls: ['./adduser.component.scss'],
+  selector: 'app-ediuser',
+  templateUrl: './ediuser.component.html',
+  styleUrls: ['./ediuser.component.scss'],
 })
-export class AdduserComponent implements OnInit {
+export class EdiuserComponent implements OnInit {
   constructor(
-    private dialogRef: MatDialogRef<AdduserComponent>,
+    private dialogRef: MatDialogRef<EdiuserComponent>,
     private userService: UserService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
   preview: any;
   form: FormGroup = new FormGroup({
-    firstname: new FormControl('', [
+    firstname: new FormControl(this.data.firstname, [
       Validators.required,
       Validators.minLength(3),
     ]),
-    lastname: new FormControl('', [
+    lastname: new FormControl(this.data.lastname, [
       Validators.required,
       Validators.minLength(3),
     ]),
 
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [
+    email: new FormControl(this.data.email, [
       Validators.required,
-      Validators.minLength(6),
+      Validators.email,
     ]),
-    confirmermdp: new FormControl('', [Validators.required]),
-    isAdmin: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.minLength(6)]),
+    confirmermdp: new FormControl('', []),
+    isAdmin: new FormControl(this.data.isAdmin, [Validators.required]),
   });
   ngOnInit(): void {}
   isformvalid() {
@@ -48,7 +52,11 @@ export class AdduserComponent implements OnInit {
   }
 
   envoyer() {
-    this.userService.ajouteruser(this.form.value).subscribe(
+    this.form.value._id = this.data._id;
+    delete this.form.value.email;
+    delete this.form.value.password;
+
+    this.userService.editUsr(this.form.value).subscribe(
       (res: any) => {
         console.log(res);
 

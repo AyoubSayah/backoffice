@@ -14,11 +14,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { AdduserComponent } from './adduser/adduser.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EdiuserComponent } from './ediuser/ediuser.component';
 
 @NgModule({
-  declarations: [UsersComponent, AdduserComponent],
+  declarations: [UsersComponent, AdduserComponent, EdiuserComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
@@ -35,6 +38,9 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    FormsModule,
   ],
 })
 export class UsersModule {}

@@ -16,9 +16,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { AddrouteComponent } from './addroute/addroute.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EditrouteComponent } from './editroute/editroute.component';
 
 @NgModule({
-  declarations: [RoutesComponent, AddrouteComponent],
+  declarations: [RoutesComponent, AddrouteComponent, EditrouteComponent],
   imports: [
     CommonModule,
     RoutesRoutingModule,
@@ -35,6 +37,7 @@ import { AddrouteComponent } from './addroute/addroute.component';
     MatDialogModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class RoutesModule {}

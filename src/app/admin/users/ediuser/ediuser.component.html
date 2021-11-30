@@ -1,6 +1,6 @@
 <div>
   <form [formGroup]="form" class="flex">
-    <h2>Add User</h2>
+    <h2>Edit User</h2>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>First Name</mat-label>
       <input type="text" matInput formControlName="firstname" />
@@ -9,7 +9,7 @@
       <mat-label>Last Name</mat-label>
       <input type="text" matInput formControlName="lastname" />
     </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="fill" disabled>
       <mat-label>Email</mat-label>
       <input type="text" matInput formControlName="email" />
     </mat-form-field>
@@ -23,7 +23,7 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Role</mat-label>
-      <mat-select formControlName="isAdmin">
+      <mat-select formControlName="isAdmin" [(value)]="form.value.isAdmin">
         <mat-option value="false"> User </mat-option>
         <mat-option value="true"> Admin </mat-option>
       </mat-select>
@@ -34,7 +34,7 @@
       (click)="envoyer()"
       [disabled]="isformvalid()"
     >
-      Add
+      Edit
     </button>
   </form>
 </div>

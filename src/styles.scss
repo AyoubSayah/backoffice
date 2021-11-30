@@ -44,3 +44,27 @@ $my-app-accent: mat-palette($mat-pink, A200, A100, A400);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
 
 @include angular-material-theme($my-app-theme);
+.custom-backdrop {
+  display: none;
+}
+.custom-modalbox {
+  position: fixed !important;
+  bottom: 4%;
+  animation: notificationup 0.6s;
+  background: transparent;
+  mat-dialog-container {
+    padding: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+  }
+}
+@keyframes notificationup {
+  0% {
+    bottom: -5%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 4.3%;
+    opacity: 1;
+  }
+}
